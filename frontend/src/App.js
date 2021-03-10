@@ -1,10 +1,23 @@
 import './App.css';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
 
 const App = (props) => {
-
   const [state, setState] = useState(props)
   const reset = () => setState(props)
+
+useEffect(() => {
+  console.log('レンダリング毎に起動する')
+})
+
+useEffect(() => {
+  console.log('初回レンダリング時に起動する')
+},[])
+
+useEffect(() => {
+  console.log('name変更時に起動する')
+},[state.name])
+
 
 
   return (
