@@ -1,0 +1,11 @@
+version: '3'
+services:
+  front:
+    build: .
+    command: /bin/sh -c "cd frontend && yarn start"
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./frontend:/frontend
+    ports:
+      - 3000:3000      
